@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4B198D00D62467C2F908E9F8DEA110D0B3D20287",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "95C844893A6B600DF5EBA13D0CF5E2201F267B64" : 0,
+    "4B198D00D62467C2F908E9F8DEA110D0B3D20287" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "71C9A6FA-4296-48D4-AB44-8D817314AA9A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "95C844893A6B600DF5EBA13D0CF5E2201F267B64" : "",
+    "4B198D00D62467C2F908E9F8DEA110D0B3D20287" : "Chat\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CQChatCricle",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CQChatCricle\/CQChatCricle.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/githupchenqiang\/CQCircleOfFriends.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4B198D00D62467C2F908E9F8DEA110D0B3D20287"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/githupchenqiang\/CQLockerLikeQQ.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "95C844893A6B600DF5EBA13D0CF5E2201F267B64"
+    }
+  ]
+}
