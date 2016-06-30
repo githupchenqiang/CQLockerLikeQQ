@@ -55,14 +55,14 @@
 		0B24CB5B1D23B23B00D3340F /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		0B24CB5C1D23B23B00D3340F /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		0B24CB5D1D23B23B00D3340F /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
-		0B24CB601D23CE8F00D3340F /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		0B24CB611D23CE8F00D3340F /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		0B24CB601D23CE8F00D3340F /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = ../Application/BaseViewController.h; sourceTree = "<group>"; };
+		0B24CB611D23CE8F00D3340F /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = ../Application/BaseViewController.m; sourceTree = "<group>"; };
 		0B24CB631D23CF1B00D3340F /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		0B24CB641D23CF1B00D3340F /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		0B24CB661D23D38900D3340F /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		0B24CB671D23D38900D3340F /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		0B24CB691D24E9AA00D3340F /* UIView_extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView_extra.h; sourceTree = "<group>"; };
-		0B24CB6A1D24E9AA00D3340F /* UIView_extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView_extra.m; sourceTree = "<group>"; };
+		0B24CB691D24E9AA00D3340F /* UIView_extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIView_extra.h; path = ../Application/UIView_extra.h; sourceTree = "<group>"; };
+		0B24CB6A1D24E9AA00D3340F /* UIView_extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIView_extra.m; path = ../Application/UIView_extra.m; sourceTree = "<group>"; };
 		0B9987D41CCF7FF600B6903D /* CQChatCricle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CQChatCricle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B9987D81CCF7FF600B6903D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0B9987DA1CCF7FF600B6903D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -107,12 +107,8 @@
 		0B24C7671D2360E200D3340F /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				0B24CB691D24E9AA00D3340F /* UIView_extra.h */,
-				0B24CB6A1D24E9AA00D3340F /* UIView_extra.m */,
 				0B9987DA1CCF7FF600B6903D /* AppDelegate.h */,
 				0B9987DB1CCF7FF600B6903D /* AppDelegate.m */,
-				0B24CB601D23CE8F00D3340F /* BaseViewController.h */,
-				0B24CB611D23CE8F00D3340F /* BaseViewController.m */,
 				0B9987FD1CCF91E500B6903D /* TabbarViewController.h */,
 				0B9987FE1CCF91E500B6903D /* TabbarViewController.m */,
 				0B24CB631D23CF1B00D3340F /* LeftViewController.h */,
@@ -221,6 +217,17 @@
 			path = HomeModel;
 			sourceTree = "<group>";
 		};
+		0B24CB6C1D2526F100D3340F /* Locker */ = {
+			isa = PBXGroup;
+			children = (
+				0B24CB691D24E9AA00D3340F /* UIView_extra.h */,
+				0B24CB6A1D24E9AA00D3340F /* UIView_extra.m */,
+				0B24CB601D23CE8F00D3340F /* BaseViewController.h */,
+				0B24CB611D23CE8F00D3340F /* BaseViewController.m */,
+			);
+			path = Locker;
+			sourceTree = "<group>";
+		};
 		0B9987CB1CCF7FF600B6903D = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +247,7 @@
 		0B9987D61CCF7FF600B6903D /* CQChatCricle */ = {
 			isa = PBXGroup;
 			children = (
+				0B24CB6C1D2526F100D3340F /* Locker */,
 				0B24C7671D2360E200D3340F /* Application */,
 				0B24CA211D2360E300D3340F /* Message */,
 				0B24CA201D2360E300D3340F /* LinkMan */,
