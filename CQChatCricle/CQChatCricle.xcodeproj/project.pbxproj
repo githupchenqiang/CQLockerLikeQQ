@@ -24,6 +24,9 @@
 		0B24CB651D23CF1B00D3340F /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24CB641D23CF1B00D3340F /* LeftViewController.m */; };
 		0B24CB681D23D38900D3340F /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24CB671D23D38900D3340F /* SearchViewController.m */; };
 		0B24CB6B1D24E9AA00D3340F /* UIView_extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24CB6A1D24E9AA00D3340F /* UIView_extra.m */; };
+		0B24CB701D2603A800D3340F /* TelephoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24CB6F1D2603A800D3340F /* TelephoneViewController.m */; };
+		0B24CB741D26076200D3340F /* chatMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24CB731D26076200D3340F /* chatMessageViewController.m */; };
+		0B24CB781D26175100D3340F /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24CB771D26175100D3340F /* AddFriendViewController.m */; };
 		0B9987D91CCF7FF600B6903D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9987D81CCF7FF600B6903D /* main.m */; };
 		0B9987DC1CCF7FF600B6903D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9987DB1CCF7FF600B6903D /* AppDelegate.m */; };
 		0B9987E21CCF7FF600B6903D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9987E01CCF7FF600B6903D /* Main.storyboard */; };
@@ -63,6 +66,12 @@
 		0B24CB671D23D38900D3340F /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		0B24CB691D24E9AA00D3340F /* UIView_extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIView_extra.h; path = ../Application/UIView_extra.h; sourceTree = "<group>"; };
 		0B24CB6A1D24E9AA00D3340F /* UIView_extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIView_extra.m; path = ../Application/UIView_extra.m; sourceTree = "<group>"; };
+		0B24CB6E1D2603A800D3340F /* TelephoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelephoneViewController.h; sourceTree = "<group>"; };
+		0B24CB6F1D2603A800D3340F /* TelephoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelephoneViewController.m; sourceTree = "<group>"; };
+		0B24CB721D26076200D3340F /* chatMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chatMessageViewController.h; sourceTree = "<group>"; };
+		0B24CB731D26076200D3340F /* chatMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chatMessageViewController.m; sourceTree = "<group>"; };
+		0B24CB761D26175100D3340F /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
+		0B24CB771D26175100D3340F /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		0B9987D41CCF7FF600B6903D /* CQChatCricle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CQChatCricle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B9987D81CCF7FF600B6903D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0B9987DA1CCF7FF600B6903D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -131,6 +140,7 @@
 			children = (
 				0B9987F41CCF81D900B6903D /* SecondViewController.h */,
 				0B9987F51CCF81D900B6903D /* SecondViewController.m */,
+				0B24CB751D26174400D3340F /* AddFrieng */,
 			);
 			path = LinkMan;
 			sourceTree = "<group>";
@@ -200,6 +210,8 @@
 		0B24CB531D23B19E00D3340F /* HomeController */ = {
 			isa = PBXGroup;
 			children = (
+				0B24CB711D26074700D3340F /* ChatMessage */,
+				0B24CB6D1D26039200D3340F /* Telephone */,
 				0B9987F11CCF81C000B6903D /* HomeViewController.h */,
 				0B9987F21CCF81C000B6903D /* HomeViewController.m */,
 				0B24CB661D23D38900D3340F /* SearchViewController.h */,
@@ -226,6 +238,35 @@
 				0B24CB611D23CE8F00D3340F /* BaseViewController.m */,
 			);
 			path = Locker;
+			sourceTree = "<group>";
+		};
+		0B24CB6D1D26039200D3340F /* Telephone */ = {
+			isa = PBXGroup;
+			children = (
+				0B24CB6E1D2603A800D3340F /* TelephoneViewController.h */,
+				0B24CB6F1D2603A800D3340F /* TelephoneViewController.m */,
+			);
+			name = Telephone;
+			path = ../../Telephone;
+			sourceTree = "<group>";
+		};
+		0B24CB711D26074700D3340F /* ChatMessage */ = {
+			isa = PBXGroup;
+			children = (
+				0B24CB721D26076200D3340F /* chatMessageViewController.h */,
+				0B24CB731D26076200D3340F /* chatMessageViewController.m */,
+			);
+			name = ChatMessage;
+			path = ../../ChatMessage;
+			sourceTree = "<group>";
+		};
+		0B24CB751D26174400D3340F /* AddFrieng */ = {
+			isa = PBXGroup;
+			children = (
+				0B24CB761D26175100D3340F /* AddFriendViewController.h */,
+				0B24CB771D26175100D3340F /* AddFriendViewController.m */,
+			);
+			path = AddFrieng;
 			sourceTree = "<group>";
 		};
 		0B9987CB1CCF7FF600B6903D = {
@@ -353,6 +394,7 @@
 				0B9987FC1CCF81F300B6903D /* FourViewController.m in Sources */,
 				0B24CB5E1D23B23B00D3340F /* HomeTableViewCell.m in Sources */,
 				0B9987DC1CCF7FF600B6903D /* AppDelegate.m in Sources */,
+				0B24CB701D2603A800D3340F /* TelephoneViewController.m in Sources */,
 				0B24CB681D23D38900D3340F /* SearchViewController.m in Sources */,
 				0B9987D91CCF7FF600B6903D /* main.m in Sources */,
 				0B24CB501D23733B00D3340F /* RegistViewController.m in Sources */,
@@ -360,6 +402,8 @@
 				0B24CB5A1D23B20B00D3340F /* HomeModel.m in Sources */,
 				0B9987E51CCF7FF600B6903D /* CQChatCricle.xcdatamodeld in Sources */,
 				0B24CB651D23CF1B00D3340F /* LeftViewController.m in Sources */,
+				0B24CB741D26076200D3340F /* chatMessageViewController.m in Sources */,
+				0B24CB781D26175100D3340F /* AddFriendViewController.m in Sources */,
 				0B9987F91CCF81E500B6903D /* ThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

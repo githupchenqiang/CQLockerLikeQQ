@@ -184,14 +184,13 @@
           withDelegate: (UIViewController<UIAlertViewDelegate> *) delegate
 {
     dispatch_async(dispatch_get_main_queue() , ^{
-        UIAlertView *alert = [[UIAlertView alloc] init];
-        alert.title = title;
-        alert.message = message;
-        alert.delegate = delegate;
-        alert.tag = vAlertTag;
-        [alert addButtonWithTitle:@"确定"];
-        [alert show];
-        alert = nil;
+        UIAlertController * alertContrl = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        
+        [alertContrl addAction:alertAction];
     });
 }
 

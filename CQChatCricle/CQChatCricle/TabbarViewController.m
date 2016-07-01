@@ -37,8 +37,8 @@
     ThirdNC.tabBarItem.title = @"发现";
     
     
-    UINavigationController *FourNC = [[UINavigationController alloc]initWithRootViewController:[FourViewController new]];
-    FourNC.tabBarItem.title = @"我的";
+//    UINavigationController *FourNC = [[UINavigationController alloc]initWithRootViewController:[FourViewController new]];
+//    FourNC.tabBarItem.title = @"我的";
     self.tabBar.tintColor = [UIColor redColor]; /*ios8以后图片不需要渲染
                                                  *设置tintColor直接改变文字和图片的颜色
                                                  *
@@ -58,7 +58,7 @@
     
 
 //    [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor redColor]} forState:UIControlStateSelected];
-    self.viewControllers = @[homeNC,SecondNC,ThirdNC,FourNC];
+    self.viewControllers = @[homeNC,SecondNC,ThirdNC];
 //    self.viewControllers = @[HomeVC,second,third,four];
     
 }

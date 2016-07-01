@@ -12,12 +12,17 @@
 #import "SearchViewController.h"
 #import "AppDelegate.h"
 #import "BaseViewController.h"
+#import "TelephoneViewController.h"
+#import "chatMessageViewController.h"
 
-@interface HomeViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
+
+
+@interface HomeViewController ()
 {
-    UITableView *_tableView;
-    UISearchBar *searchBar;
-   
+    
+    chatMessageViewController *_ChatMessage;
+    TelephoneViewController *_tele;
+
 }
 
 @end
@@ -37,6 +42,7 @@
 }
 
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -50,16 +56,64 @@
     _UserHearder.layer.masksToBounds = YES;
     _UserHearder.backgroundColor = [UIColor orangeColor];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:_UserHearder];
-
-    self.navigationItem.title = @"消息";
+//    self.navigationItem.title = @"消息";
     
     
-    [self CreatMessageTable];
+    //设置分段控制器
+    NSArray *arr = [NSArray arrayWithObjects:@"消息",@"电话", nil];
+    UISegmentedControl *segment = [[UISegmentedControl alloc]initWithItems:arr];
+    segment.frame = CGRectMake(ViewOfWidth/2-50, 27, 100, 30);
+    [segment setTitle:@"消息" forSegmentAtIndex:0];
+    [segment setTitle:@"电话" forSegmentAtIndex:1];
+    
+    [segment addTarget:self action:@selector(SegmentAction:) forControlEvents:UIControlEventValueChanged];
+//    segment.center = self.navigationController.view.center;
+    segment.selectedSegmentIndex = 0;
+    [self.navigationController.view addSubview:segment];
+    
+    //设置Navigation右视图
+    UIImage *RightImage = [UIImage imageNamed:@"Right"];
+    RightImage = [RightImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIButton *RightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [RightButton setBackgroundImage:RightImage forState:UIControlStateNormal];
+    RightButton.frame = CGRectMake(0, 0,30, 30);
+    [RightButton addTarget:self action:@selector(RightButtonAction) forControlEvents:UIControlEventTouchDown];
+    self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc]initWithCustomView:RightButton];
+    
+    
+    _ChatMessage = [chatMessageViewController new];
+    [self.view addSubview:_ChatMessage.view];
+    [self addChildViewController:_ChatMessage];
+//    [self CreatMessageTable];
 //    [self CreatLeftItem];
     
 }
 
-//
+- (void)SegmentAction:(UISegmentedControl *)sengment
+{
+    if (sengment.selectedSegmentIndex == 0) {
+        [_tele.view removeFromSuperview];
+        [self.view insertSubview:_ChatMessage.view atIndex:0];
+        
+    }else if (sengment.selectedSegmentIndex == 1)
+    {   _tele = [TelephoneViewController new];
+        [self.view addSubview:_tele.view];
+         [self addChildViewController:_tele];
+        [_ChatMessage.view removeFromSuperview];
+        [self.view insertSubview:_tele.view atIndex:1];
+    
+    }
+    
+}
+
+
+
+- (void)RightButtonAction
+{
+    
+}
+
+
 - (void)HearderAction
 {
     AppDelegate *apple = (AppDelegate *)[[UIApplication sharedApplication]delegate];
@@ -102,93 +156,6 @@
 
 }
 
-//创建TableView
-- (void)CreatMessageTable
-{
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width, self.view.frame.size.height - 49) style:UITableViewStylePlain];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    [_tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeCell"];
-    _tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0,_tableView.frame.size.width, 45)];
-    [self.view addSubview:_tableView];
- 
-    searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, ViewOfWidth - ViewOfWidth/4, 39)];
-//    searchBar.backgroundColor = [UIColor grayColor];
-    searchBar.delegate = self;
-    searchBar.searchBarStyle = UISearchBarStyleMinimal;
-    searchBar.center = _tableView.tableHeaderView.center;
-    [_tableView.tableHeaderView addSubview:searchBar];
-}
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-{
-    SearchViewController *searchVC = [SearchViewController new];
-    [self presentViewController:searchVC animated:YES completion:nil];
-
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-    
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if (_MessageArray == nil) {
-        return 10;
-        
-    }else
-    {
-        return _MessageArray.count;
-        
-    }
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    HomeTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"HomeCell"];
-//    cell.textLabel.text = @"信息";
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 68;
-}
-
-
-
-- (void)viewDidLayoutSubviews
-{
-    if ([_tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        [_tableView setSeparatorInset:UIEdgeInsetsZero];
-    }
-    
-    
-    if ([_tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-        [_tableView setLayoutMargins:UIEdgeInsetsZero];
-    }
-}
-
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-        [cell setLayoutMargins:UIEdgeInsetsZero];
-    }
-    
-    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-        [cell setSeparatorInset:UIEdgeInsetsZero];
-    }
-    
-}
-
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [searchBar resignFirstResponder];
-}
 
 
 

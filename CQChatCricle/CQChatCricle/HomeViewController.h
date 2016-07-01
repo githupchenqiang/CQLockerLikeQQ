@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "HomeTableViewCell.h"
 @interface HomeViewController : UIViewController
-@property (nonatomic ,strong)NSMutableArray *MessageArray;
-@property (nonatomic ,strong) UIButton *UserHearder;;
+@property (nonatomic ,strong) UIButton *UserHearder;
 @end

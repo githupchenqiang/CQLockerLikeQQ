@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "AppDelegate.h"
 
 @interface SecondViewController ()
 
@@ -27,7 +28,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
-//    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    self.navigationItem.title = @"联系人";
+    _UserHearder = [UIButton buttonWithType:UIButtonTypeCustom];
+    _UserHearder.frame = CGRectMake(0, 0, 40, 40);
+    UIImage *image = [UIImage imageNamed:@"Header"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [_UserHearder setBackgroundImage:image forState:UIControlStateNormal];
+    [_UserHearder addTarget:self action:@selector(HearderAction) forControlEvents:UIControlEventTouchDown];
+    _UserHearder.layer.cornerRadius = 20;
+    _UserHearder.layer.masksToBounds = YES;
+    _UserHearder.backgroundColor = [UIColor orangeColor];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:_UserHearder];
+    
+    
+    UIButton *RightButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [RightButton setTitle:@"添加" forState:UIControlStateNormal];
+    RightButton.frame = CGRectMake(0, 0,40, 40);
+    [RightButton setTintColor:[UIColor colorWithRed:0/255.0 green:168/255.0 blue:239/255.0 alpha:1]];
+    [RightButton addTarget:self action:@selector(RightButtonAction:) forControlEvents:UIControlEventTouchDown];
+    self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc]initWithCustomView:RightButton];
+    
+    
+    
+    
+    
+}
+
+- (void)RightButtonAction:(UIButton *)button
+{
+    
+}
+
+
+
+- (void)HearderAction
+{
+    AppDelegate *apple = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if (apple.bas.closed) {
+        
+        [apple.bas openLeftView];
+        //        UserHearder.alpha = 0;
+    }
+    else
+    {
+        [apple.bas closeLeftView];
+        //        UserHearder.alpha = 1;
+        
+    }
     
 }
 

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ThirdViewController : UIViewController
-
+@property (nonatomic ,strong) UIButton *UserHearder;
 @end
