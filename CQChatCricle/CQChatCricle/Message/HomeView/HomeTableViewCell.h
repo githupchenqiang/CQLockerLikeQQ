@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *NickName;
 @property (weak, nonatomic) IBOutlet UILabel *MessageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *TimeLabel;
+@property (nonatomic ,strong)HomeModel *model;
+
 - (void)setModelWithHome:(HomeModel *)HomeModel;
 
 

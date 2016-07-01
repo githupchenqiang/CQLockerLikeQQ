@@ -8,6 +8,7 @@
 
 #import "TelephoneViewController.h"
 #import "SearchViewController.h"
+#import "TeleTableViewCell.h"
 
 @interface TelephoneViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 {
@@ -27,13 +28,15 @@
 
 - (void)CreatMessageTable
 {
-    teleTable = [[UITableView alloc]initWithFrame:CGRectMake(0,64, self.view.frame.size.width, self.view.frame.size.height - 49) style:UITableViewStylePlain];
+    teleTable = [[UITableView alloc]initWithFrame:CGRectMake(0,64, self.view.frame.size.width, self.view.frame.size.height - 64) style:UITableViewStylePlain];
     teleTable.delegate = self;
     teleTable.dataSource = self;
-    [teleTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"TeleCell"];
+    [teleTable registerNib:[UINib nibWithNibName:@"TeleTableViewCell" bundle:nil] forCellReuseIdentifier:@"TeleCell"];
+    [teleTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"TeleOneCell"];
 //    [teleTable registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeCell"];
     teleTable.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0,teleTable.frame.size.width, 45)];
     teleTable.showsVerticalScrollIndicator = NO;
+    teleTable.bounces = YES;
     [self.view addSubview:teleTable];
     
     teleSearch = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, ViewOfWidth - ViewOfWidth/9, 39)];
@@ -48,7 +51,6 @@
 {
     SearchViewController *searchVC = [SearchViewController new];
     [self presentViewController:searchVC animated:YES completion:nil];
-    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -66,9 +68,7 @@
     }else
     {
         return 10;
-        
     }
-   
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -81,11 +81,8 @@
     if (section == 1) {
     label.text = @"通话记录";
     }
-    
     return view;
-    
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
@@ -108,14 +105,58 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [teleTable dequeueReusableCellWithIdentifier:@"TeleCell"];
-    //    cell.textLabel.text = @"信息";
-    return cell;
+    
+    if (indexPath.section == 0) {
+        TeleTableViewCell *Onecell = [tableView dequeueReusableCellWithIdentifier:@"TeleCell" forIndexPath:indexPath];
+        
+        switch (indexPath.row) {
+            case 0:
+                Onecell.imageView.image = [UIImage imageNamed:@"电话-1"];
+                Onecell.textLabel.text = @"电话黄页";
+                break;
+                
+                case 1:
+                Onecell.imageView.image = [UIImage imageNamed:@"通讯录"];
+                Onecell.textLabel.text = @"通讯录";
+                
+                break;
+                
+            default:
+                break;
+        }
+        
+        return Onecell;
+        
+    }else if (indexPath.section == 1)
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TeleOneCell" forIndexPath:indexPath];
+        return cell;
+    }else
+    {
+        return nil;
+        
+    }
+    
+
+    
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 68;
+    
+    if (indexPath.section == 0) {
+        return 50;
+    }else if (indexPath.section == 1)
+    {
+        return 60;
+    }else
+    {
+        return 0;
+    }
+    
+    
+    
 }
 
 

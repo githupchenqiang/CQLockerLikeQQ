@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface HomeModel : NSObject
+@property (nonatomic ,strong)NSString *Name;
+@property (nonatomic ,strong)NSString *DescripString;
+@property (nonatomic ,strong)NSString *Time;
+@property (nonatomic ,strong)UIImage *image;
 
 @end

@@ -14,14 +14,13 @@
     UISearchBar *search;
     UITableView *SearchTable;
     NSMutableArray *searchDaraAarray;
-    
- 
 }
 @end
 @implementation SearchViewController
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    search.searchResultsButtonSelected = YES;
 }
 
 - (void)viewDidLoad {
@@ -55,11 +54,9 @@
     
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [SearchTable dequeueReusableCellWithIdentifier:@"searchCell"];
-    
     return cell;
     
 }

@@ -27,6 +27,9 @@
 		0B24CB701D2603A800D3340F /* TelephoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24CB6F1D2603A800D3340F /* TelephoneViewController.m */; };
 		0B24CB741D26076200D3340F /* chatMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24CB731D26076200D3340F /* chatMessageViewController.m */; };
 		0B24CB781D26175100D3340F /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24CB771D26175100D3340F /* AddFriendViewController.m */; };
+		0B24CB861D26588500D3340F /* TeleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24CB841D26588500D3340F /* TeleTableViewCell.m */; };
+		0B24CB871D26588500D3340F /* TeleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B24CB851D26588500D3340F /* TeleTableViewCell.xib */; };
+		0B24CB8A1D26791600D3340F /* DetailChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24CB891D26791600D3340F /* DetailChatTableViewController.m */; };
 		0B9987D91CCF7FF600B6903D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9987D81CCF7FF600B6903D /* main.m */; };
 		0B9987DC1CCF7FF600B6903D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9987DB1CCF7FF600B6903D /* AppDelegate.m */; };
 		0B9987E21CCF7FF600B6903D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9987E01CCF7FF600B6903D /* Main.storyboard */; };
@@ -72,6 +75,11 @@
 		0B24CB731D26076200D3340F /* chatMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chatMessageViewController.m; sourceTree = "<group>"; };
 		0B24CB761D26175100D3340F /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
 		0B24CB771D26175100D3340F /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
+		0B24CB831D26588500D3340F /* TeleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeleTableViewCell.h; sourceTree = "<group>"; };
+		0B24CB841D26588500D3340F /* TeleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeleTableViewCell.m; sourceTree = "<group>"; };
+		0B24CB851D26588500D3340F /* TeleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeleTableViewCell.xib; sourceTree = "<group>"; };
+		0B24CB881D26791600D3340F /* DetailChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailChatTableViewController.h; sourceTree = "<group>"; };
+		0B24CB891D26791600D3340F /* DetailChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailChatTableViewController.m; sourceTree = "<group>"; };
 		0B9987D41CCF7FF600B6903D /* CQChatCricle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CQChatCricle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B9987D81CCF7FF600B6903D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0B9987DA1CCF7FF600B6903D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -245,6 +253,8 @@
 			children = (
 				0B24CB6E1D2603A800D3340F /* TelephoneViewController.h */,
 				0B24CB6F1D2603A800D3340F /* TelephoneViewController.m */,
+				0B24CB791D2657C100D3340F /* TeleCell */,
+				0B24CB7A1D2657C100D3340F /* TeleModel */,
 			);
 			name = Telephone;
 			path = ../../Telephone;
@@ -255,6 +265,8 @@
 			children = (
 				0B24CB721D26076200D3340F /* chatMessageViewController.h */,
 				0B24CB731D26076200D3340F /* chatMessageViewController.m */,
+				0B24CB881D26791600D3340F /* DetailChatTableViewController.h */,
+				0B24CB891D26791600D3340F /* DetailChatTableViewController.m */,
 			);
 			name = ChatMessage;
 			path = ../../ChatMessage;
@@ -267,6 +279,23 @@
 				0B24CB771D26175100D3340F /* AddFriendViewController.m */,
 			);
 			path = AddFrieng;
+			sourceTree = "<group>";
+		};
+		0B24CB791D2657C100D3340F /* TeleCell */ = {
+			isa = PBXGroup;
+			children = (
+				0B24CB831D26588500D3340F /* TeleTableViewCell.h */,
+				0B24CB841D26588500D3340F /* TeleTableViewCell.m */,
+				0B24CB851D26588500D3340F /* TeleTableViewCell.xib */,
+			);
+			path = TeleCell;
+			sourceTree = "<group>";
+		};
+		0B24CB7A1D2657C100D3340F /* TeleModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TeleModel;
 			sourceTree = "<group>";
 		};
 		0B9987CB1CCF7FF600B6903D = {
@@ -377,6 +406,7 @@
 				0B9987E71CCF7FF600B6903D /* Assets.xcassets in Resources */,
 				0B24CB5F1D23B23B00D3340F /* HomeTableViewCell.xib in Resources */,
 				0B9987E21CCF7FF600B6903D /* Main.storyboard in Resources */,
+				0B24CB871D26588500D3340F /* TeleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,12 +426,14 @@
 				0B9987DC1CCF7FF600B6903D /* AppDelegate.m in Sources */,
 				0B24CB701D2603A800D3340F /* TelephoneViewController.m in Sources */,
 				0B24CB681D23D38900D3340F /* SearchViewController.m in Sources */,
+				0B24CB861D26588500D3340F /* TeleTableViewCell.m in Sources */,
 				0B9987D91CCF7FF600B6903D /* main.m in Sources */,
 				0B24CB501D23733B00D3340F /* RegistViewController.m in Sources */,
 				0B9987F31CCF81C000B6903D /* HomeViewController.m in Sources */,
 				0B24CB5A1D23B20B00D3340F /* HomeModel.m in Sources */,
 				0B9987E51CCF7FF600B6903D /* CQChatCricle.xcdatamodeld in Sources */,
 				0B24CB651D23CF1B00D3340F /* LeftViewController.m in Sources */,
+				0B24CB8A1D26791600D3340F /* DetailChatTableViewController.m in Sources */,
 				0B24CB741D26076200D3340F /* chatMessageViewController.m in Sources */,
 				0B24CB781D26175100D3340F /* AddFriendViewController.m in Sources */,
 				0B9987F91CCF81E500B6903D /* ThirdViewController.m in Sources */,

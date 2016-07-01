@@ -18,7 +18,7 @@
     self = [super init];
     if (self) {
         UIImage *image = [UIImage imageNamed:@"我的"];
-//        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//   image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         self.tabBarItem.image = image;
     }
     return self;

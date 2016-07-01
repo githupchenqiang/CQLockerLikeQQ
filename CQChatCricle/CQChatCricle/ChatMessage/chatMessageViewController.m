@@ -9,19 +9,26 @@
 #import "chatMessageViewController.h"
 #import "SearchViewController.h"
 #import "HomeTableViewCell.h"
+#import "HomeModel.h"
+#import "DetailChatTableViewController.h"
 
 @interface chatMessageViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 {
     UITableView *_tableView;
     UISearchBar *searchBar;
 }
+@property (nonatomic ,strong)NSMutableArray *NameArray;
+@property (nonatomic ,strong)NSMutableArray *decripArray;
+@property (nonatomic ,strong)NSMutableArray *ImageNameArray;
 @end
 
 @implementation chatMessageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor cyanColor];
+    _NameArray = [NSMutableArray arrayWithObjects:@"拿破仑",@"华盛顿",@"斯大林",@"毛泽东",@"金日成",@"艾森豪威尔",@"麦克马洪",@"麦克阿瑟", nil];
+    _decripArray = [NSMutableArray arrayWithObjects:@"战神的世界,你不会懂,犹太不灭,马不归",@"从罪恶的英国将人民解救出来，带领爱好自由的人类建立新的家园",@"将社会主义发扬光大,同资本主义战斗到底",@"东风压倒西风，一切资本主义都是纸老虎",@"国家不灭，王朝不亡",@"战斗永不停息，名族勇往直前",@"殖民地的结束，是战争的消亡与变形",@"不是自己能力很强，而是能让每个人能力发挥最强", nil];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self CreatMessageTable];
     
 }
@@ -61,19 +68,28 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (_MessageArray == nil) {
-        return 10;
+        return _NameArray.count;
+        
         
     }else
     {
         return _MessageArray.count;
-        
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    HomeModel *model = [[HomeModel alloc]init];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"HH:mm"];
+    NSString *currentTime = [formatter stringFromDate:[NSDate date]];
+    NSLog(@"%@",currentTime);
+    model.Time = currentTime;
+    model.Name = _NameArray[indexPath.row];
+    model.DescripString = _decripArray[indexPath.row];
+    model.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld",indexPath.row + 1]];
     HomeTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"HomeCell"];
-    //    cell.textLabel.text = @"信息";
+    cell.model = model;
     return cell;
 }
 
@@ -81,6 +97,15 @@
 {
     return 68;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailChatTableViewController *detail = [DetailChatTableViewController new];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:detail];
+    detail.detailName = _NameArray[indexPath.row];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
+}
+
 
 
 
