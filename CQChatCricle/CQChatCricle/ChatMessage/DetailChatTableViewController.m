@@ -18,24 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = _detailName;
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    button.frame = CGRectMake(0, 0,25, 26);
-    [button setTintColor:[UIColor colorWithRed:0/255.0 green:168/255.0 blue:239/255.0 alpha:1]];
-    [button addTarget:self action:@selector(BackButton) forControlEvents:UIControlEventTouchDown];
-     [button setBackgroundImage:[UIImage imageNamed:@"向左"] forState:UIControlStateNormal];
-   button.imageEdgeInsets = UIEdgeInsetsMake(0,0,-0, -button.imageView.bounds.size.width);
-//    [button setTitle:@"返回" forState:UIControlStateNormal];
-    
-    button.titleEdgeInsets = UIEdgeInsetsMake(0,25,-0, 0);
-//
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button];
+  
 }
 
-- (void)BackButton
-{
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-}
+
 
 
 

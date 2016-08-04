@@ -9,6 +9,7 @@
 #import "TelephoneViewController.h"
 #import "SearchViewController.h"
 #import "TeleTableViewCell.h"
+#import "TeleSelectViewController.h"
 
 @interface TelephoneViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 {
@@ -162,7 +163,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%ld==%ld",indexPath.section,indexPath.row);
+    if (indexPath.section == 0 && indexPath.row == 0 ) {
+        TeleSelectViewController *teleSelect = [[TeleSelectViewController alloc]init];
+        [self.navigationController presentViewController:teleSelect animated:YES completion:nil];
+        
+    }
     
 }
 

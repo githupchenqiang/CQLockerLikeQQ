@@ -11,6 +11,7 @@
 #import "HomeTableViewCell.h"
 #import "HomeModel.h"
 #import "DetailChatTableViewController.h"
+#import "DetailViewController.h"
 
 @interface chatMessageViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 {
@@ -30,7 +31,6 @@
     _decripArray = [NSMutableArray arrayWithObjects:@"战神的世界,你不会懂,犹太不灭,马不归",@"从罪恶的英国将人民解救出来，带领爱好自由的人类建立新的家园",@"将社会主义发扬光大,同资本主义战斗到底",@"东风压倒西风，一切资本主义都是纸老虎",@"国家不灭，王朝不亡",@"战斗永不停息，名族勇往直前",@"殖民地的结束，是战争的消亡与变形",@"不是自己能力很强，而是能让每个人能力发挥最强", nil];
     self.view.backgroundColor = [UIColor whiteColor];
     [self CreatMessageTable];
-    
 }
 
 //创建TableView
@@ -100,13 +100,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DetailChatTableViewController *detail = [DetailChatTableViewController new];
+    DetailViewController *detail = [DetailViewController new];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:detail];
-    detail.detailName = _NameArray[indexPath.row];
-    [self.navigationController presentViewController:nav animated:YES completion:nil];
+    detail.Detailename = _NameArray[indexPath.row];
+    [self.view.window.rootViewController presentViewController:nav animated:YES completion:nil];
+    
 }
-
-
 
 
 - (void)viewDidLayoutSubviews
