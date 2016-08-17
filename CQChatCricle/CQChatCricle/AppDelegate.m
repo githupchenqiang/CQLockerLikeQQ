@@ -36,16 +36,18 @@
     _bas = [[BaseViewController alloc]initWithLeftView:LetVC andMainView:mainVC];
     self.window.rootViewController = _bas;
 
-//    if (![[NSUserDefaults standardUserDefaults]boolForKey:@"first"]) {
-//        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"second"];
-//        self.window.rootViewController = registVC;
-//    }else
-//    {
-//         self.window.rootViewController = base;
-//    }
-//    
+    
+    [[RCIM sharedRCIM]initWithAppKey:@"m7ua80gbuufpm"];
+    [[RCIM sharedRCIM]connectWithToken:@"T/A7PWSanGxDAL5NV/8tShQ4nPG/SP5eI48U5h6LTGXGNnsDlxwekEjtpJl2bCfJnsK8KfvpMw0Ejj4sV1dvDA==" success:^(NSString *userId) {
+        NSLog(@"登录成功 ,当前用户ID%@",userId);
+    } error:^(RCConnectErrorCode status) {
+        NSLog(@"登录错误%ld",(long)status);
+        
+    } tokenIncorrect:^{
+        NSLog(@"token错误");
+    }];
+    
     [self.window makeKeyAndVisible];
-   
     return YES;
 }
 

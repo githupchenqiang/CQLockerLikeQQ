@@ -15,5 +15,7 @@
 #endif /* PrefixHeader_pch */
 #import "RegistViewController.h"
 #import "TabbarViewController.h"
+#import <RongIMKit/RongIMKit.h>
+
 #define ViewOfWidth self.view.frame.size.width
 #define ViewOfHeight self.view.frame.size.height

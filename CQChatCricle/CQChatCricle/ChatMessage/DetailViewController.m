@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor cyanColor];
     self.navigationItem.title = _Detailename;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     button.frame = CGRectMake(0, 0,25, 26);
@@ -29,6 +29,18 @@
     button.titleEdgeInsets = UIEdgeInsetsMake(0,25,-0, 0);
     //
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button];
+    
+    RCConversationViewController *chat = [RCConversationViewController new];
+    chat.conversationType = ConversationType_PRIVATE;
+    chat.targetId = @"T/A7PWSanGxDAL5NV/8tShQ4nPG/SP5eI48U5h6LTGXGNnsDlxwekEjtpJl2bCfJnsK8KfvpMw0Ejj4sV1dvDA=";
+    chat.title = [NSString stringWithFormat:@"和%@聊天",_Detailename];
+    [self.navigationController pushViewController:chat animated:YES];
+    
+    
+    
+    
+    
+    
 }
 
 
